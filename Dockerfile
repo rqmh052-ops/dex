@@ -8,7 +8,7 @@ RUN apt-get update && \
 # تحميل smali fat jar (النسخة القابلة للتشغيل)
 RUN mkdir -p /app/tools && \
     wget -q -O /app/tools/smali.jar \
-    "https://github.com/baksmali/smali/releases/download/v3.0.9/smali-3.0.9-fat.jar" && \
+    "https://github.com/baksmali/smali/releases/download/3.0.9/smali-3.0.9-fat.jar" && \
     java -jar /app/tools/smali.jar --version
 
 WORKDIR /app
