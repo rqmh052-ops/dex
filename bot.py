@@ -14,6 +14,7 @@ import tempfile
 from pathlib import Path
 
 from aiogram import Bot, Dispatcher, F, types
+from aiogram.client.default import DefaultBotProperties
 from aiogram.filters import Command, BaseFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
@@ -276,7 +277,7 @@ def image_to_b64(image_bytes: bytes) -> str:
 # ──────────────────────────────────────────
 # BOT & DISPATCHER
 # ──────────────────────────────────────────
-bot = Bot(token=BOT_TOKEN, parse_mode="HTML")
+bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode="HTML"))
 dp  = Dispatcher(storage=MemoryStorage())
 
 # تطبيق فلتر الأدمن على كل المعالجات
